@@ -1,0 +1,214 @@
+/* 이체페이지 공통*/
+.transfer{
+  height: 736px;
+  width: 375px;
+  display: grid;
+  grid-template-columns: 29px 1fr 29px;
+  grid-template-rows: 44px 33px 34px 33px 1fr 48px;
+  transition: all 600ms;
+  background-color: #fff;
+  position: absolute;
+  top: 812px;
+  z-index: 2;
+}
+.transfer.on{
+  position: absolute;
+  top: 0;
+}
+.transfer .top_bar {
+  grid-area: 1 / 1 / 2 / 4;
+  background-color: #fff;
+  height: 44px; 
+}
+.transfer h2{
+  grid-area: 3 / 2 / 4 / 3;
+  font-weight: 500;
+  font-size: 24px; 
+}
+
+/* 취소 버튼 */
+.cancel{
+  position:absolute;
+  right: 13px;
+  top: 44px;
+  cursor: pointer;
+}
+
+/* 이체리스트 */
+/* 직접입력 */
+.transfer .account_list{
+  grid-area: 5 / 2 / 6 / 3;
+}.transfer .account_list.on{
+  display: none;
+}
+.transfer .account_list > a > button{
+  background-color: #fff;
+  width: 317px;
+  height: 47px;
+  border-radius: 4px;
+  margin-bottom: 44px;
+  cursor: pointer;
+  border:1px solid #858585;
+}
+/* 계좌리스트 */
+.transfer .account_list {
+  margin: 1px;
+}
+.transfer .account_list > ul > li {
+  display: flex;
+  height: 54;
+  margin-bottom: 17px;
+  align-items: center;
+}
+.transfer .account_list > ul > li > .avatar{
+  margin-right: 17px;
+}
+.transfer .account_list > ul > li > div{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.transfer .account_list > ul > li > div > p{
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 300;
+}
+.transfer .account_list > ul > li > div > p:last-child{
+  font-size: 16px;
+  color:#444;
+}
+.transfer .account_list > ul > li > .star_icon{
+  justify-items: flex-end;
+}
+ 
+
+
+/* 이체 금액 */
+/* 입금계좌 */
+.transfer_amount{
+  grid-area: 5 / 2 / 6 /3;
+  background-color: #fff;
+  display: none;
+}
+.transfer_amount .receiver{
+  display: flex;
+  margin-bottom: 42px;
+}
+.transfer_amount .receiver > img{
+  margin-right: 17px;
+}
+.transfer_amount .receiver > div > p{
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.transfer_amount .receiver > div > p:last-child{
+  color:#444;
+  font-size: 16px;
+}
+/* 금액입력 */
+.transfer_amount .amount{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.transfer_amount .amount > div{
+  position: relative;
+}
+.transfer_amount .amount > div::after{
+  content: '';
+  width: 313px;
+  height: 3px;
+  background-color: #FF5F00;
+  position:absolute;
+  bottom: 0;
+  left: 0;
+}
+.transfer_amount .amount > div > input{
+  border: none;
+  width: 262px;
+  height: 46px;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: right;
+  margin-right: 14px;
+}
+.transfer_amount .amount > div > input:focus{
+  outline: none;
+}
+.transfer_amount .amount > div > span{
+  font-weight: 300;
+  font-size: 24px;
+}
+.transfer_amount .amount > p{
+  font-weight: 300;
+  font-size: 18px;
+  margin: 30px auto 49px;
+}
+/* 번호판 */
+.transfer_amount ul{
+  width: 284px;
+  height: 284px;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(3, 33.3333%);
+  margin: auto;
+  align-items: center;
+}
+.transfer_amount ul > li {
+  font-size: 36px;
+  font-weight: 700;
+  color:#858585;
+  align-items: center;
+}
+.transfer_amount ul > li > img{
+  display: inline;
+}
+.transfer_amount ul > li:nth-child(3n+2){
+  text-align: center;
+}
+.transfer_amount ul > li:nth-child(3n){
+  text-align: right;
+}
+
+/*다음 버튼 */
+/* .next 클래스 display:block 변환*/
+.transfer .next{
+  display: none;
+  width: 375px;
+  grid-area: 6 / 1 / 7 / 4;
+  background-color: #FF5F00;
+  color: #fff;
+  content: '다음';
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+
+/* 이체완료페이지 */
+.transfer_done{
+  height: 692px;
+  width: 375px;
+  background-color: #fff;
+  display: none;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  z-index: 3;
+}
+.transfer_done > div{
+  grid-area: 2 / 2 / 3 / 3;
+  text-align: left;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 1.5; 
+}
+.transfer_done .finish_btn{
+  position: absolute;
+  right: 13px;
+  top:44px;
+
+}

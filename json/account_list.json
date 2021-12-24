@@ -1,0 +1,40 @@
+{
+  "accontList": [
+    {
+      "idx": 1,
+      "name": "정을수",
+      "accountBank": "신한",
+      "accountNumber": 112048393002
+    },
+    {
+      "idx": 2,
+      "name": "신이현",
+      "accountBank": "국민",
+      "accountNumber": 315048393002
+    },
+    {
+      "idx": 3,
+      "name": "웅진코웨이",
+      "accountBank": "국민",
+      "accountNumber": 31524087779
+    },
+    {
+      "idx": 4,
+      "name": "기강슈퍼",
+      "accountBank": "하나",
+      "accountNumber": 551524087671
+    },
+    {
+      "idx": 5,
+      "name": "김민석",
+      "accountBank": "하나",
+      "accountNumber": 551240791014
+    },
+    {
+      "idx": 6,
+      "name": "기성훈",
+      "accountBank": "하나",
+      "accountNumber": 551332594810
+    }
+  ]
+}

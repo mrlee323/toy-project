@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toy project</title>
+  <!-- google icon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- css reset -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/spending_manage.css">
+  <link rel="stylesheet" href="./css/transfer.css">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- swiper javascript -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+  <!-- script -->
+  <script defer src = "./js/app.js"></script>
+  <script defer src = "./js/slide.js"></script>
+  <script defer src = "./js/getData.js"></script>
+  <script defer src = "./js/account.js"></script>
+  <script defer src = "./js/chart.js"></script>
+  
+</head>
+<body>
+  <div class="container">
+    <!-- 상단바 -->
+    <div class="top_bar">
+      <time>9:00</time>
+      <div class="top_icon">
+        <img src="./img/signal.svg" alt="signal">
+        <img src="./img/Wifi.svg" alt="wifi">
+        <img src="./img/Battery.svg" alt="battery">
+      </div>
+    </div>
+    
+    <main>
+      <!-- 메인슬라이드 -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+        <!-- 생활비 시작 -->
+          <section class="living_expense main swiper-slide">
+            <header>
+              <img src="./img/avatar.svg" alt="avatar" />
+              <h2>생활비</h2>
+              <div class="h_icon">
+                <a href="javascript:void(0)"><img src="./img/scan.svg" alt="scan" /></a>
+                <a href="javascript:void(0)"><img src="./img/search.svg" alt="search" /></a>
+              </div>
+            </header>
+            <section class="account">
+              <div>
+                <div class="account_number">
+                  <p>355-673877-78773</p>
+                  <a class="transfer_btn" onclick="transfer()">이체</a> 
+                </div>
+                <div class="account_balance">
+                  1,240,000
+                  <span>원</span>
+                </div>
+                <div class="account_graph">
+                  <div class="range_slide">
+                    <div class="range_thumb"></div>
+                  </div>
+                  <img src="./img/chart.svg" alt="chart" onclick="moveManagePage()">
+                  <p><span class="rest_date"></span> <span class="money_left">-원</span> 남음</p>
+                </div>
+              </div>
+              <a href="javascript:void(0)" class="ad">지금 낮은 이자로 생활대출을 신청하세요! <span>Go</span></a>
+            </section>
+            <section class="spending">
+              <div class="bar" ></div>
+              <section class="coinbank">
+                <ul>
+                  <ul class=coin_gauge>
+                    <li>
+                      <div class="first"></div>
+                      <p>여행가자</p>
+                      <p>842,200원</p>
+                    </li>
+                    <li>
+                      <div class="second"></div>
+                      <p>냉장고사기</p>
+                      <p>142,200원</p>
+                    </li>
+                  </ul>
+                  <li class="plus">
+                    <img src="./img/plus.svg" alt="plus">
+                    <p>저금통 만들기</p>
+                  </li>
+                </ul>
+              </section>
+              <section class="spending_list bank__payList">
+                <div class="bank__cloneWrap">
+                  <div class="bank__datePay">
+                    <p class="bank__date"></p>
+                    <p class="bank__pay"></p>
+                  </div>
+                  <ul class="bank__cloneGoods">
+                    <li class="bank__goods">
+                      <span class="goodsName"></span>
+                      <span class="goodsPrice"></span> 
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
+          <!-- 생활비 끝-->
+
+          <!-- 할머니 계좌 시작 -->
+          <section class="grandma_account main swiper-slide">
+            <header>
+              <img src="./img/avatar_gandma.svg" alt="gandma">
+              <h2>할머니 계좌</h2>
+              <div class="h_icon">
+                <a href="javascript:void(0)"><img src="./img/scan.svg" alt="scan" /></a>
+                <a href="javascript:void(0)"><img src="./img/search.svg" alt="search" /></a>
+              </div>
+            </header>
+            <section class="account">
+              <div>
+                <div class="account_number">
+                    <p>155-23422-78773</p>
+                    <a class="transfer_btn" onclick="transfer()">이체</a> 
+                </div>
+                <div class="account_balance">
+                  3,140,000<span>원</span>
+                </div>
+                <div class="account_graph">
+                  <div class="range_slide">
+                    <div class="range_thumb"></div>
+                  </div>
+                  <img src="./img/chart.svg" alt="chart" onclick="moveManagePage()">
+                  <p><span class="rest_date">5일 동안</span> 210,000<span class="money_left">원</span> 남음</p>
+                </div>
+              </div>
+            </section>
+            <section class="spending position">
+              <div class="bar" ></div>
+              <section class="coinbank">
+                <ul>
+                  <ul class=coin_gauge>
+                    <li>
+                      <div class="first grandma"></div>
+                      <p>딸 냉장고</p>
+                      <p>545,2000원</p>
+                    </li>
+                    <li>
+                      <div class="second grandma"></div>
+                      <p>아들 컴퓨터</p>
+                      <p>432,000원</p>
+                    </li>
+                  </ul>
+                  <li class="plus">
+                    <img src="./img/plus.svg" alt="plus">
+                    <p>저금통 만들기</p>
+                  </li>
+                </ul>
+              </section>
+              <section class="spending_list">
+                <div>
+                  <div>
+                    <p>오늘</p>
+                    <p>127,600원 지출</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span>미스터피자</span>
+                      <span>32,000</span> 
+                    </li>
+                    <li>
+                      <span>택시</span>  
+                      <span>4,800</span>
+                    </li>
+                    <li>
+                      <span>이마트</span>
+                      <span>8,600</span>
+                    </li>
+                    <li>
+                      <span>스타벅스</span>  
+                      <span>4,800</span>
+                    </li>
+                    <li>
+                      <span>전길수</span>
+                      <span>+20,000</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div>
+                    <p>어제</p>
+                    <p>71,600원 지출</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span>CU </span>
+                      <span>8,900</span> 
+                    </li>
+                    <li>
+                      <span>김경남</span>
+                      <span>+31,000</span>
+                    </li>
+                    <li>
+                      <span>애슐리</span>
+                      <span>31,000</span>
+                    </li>
+                    <li>
+                      <span>교보문고</span>
+                      <span>18,000</span>
+                    </li>
+                    <li>
+                      <span>쿠팡</span>
+                      <span>10,500</span>
+                    </li>
+                    <li>
+                      <span>미스터피자</span>
+                      <span>32,000</span>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
+          <!-- 할머니 계좌 끝 -->
+
+          <!-- 아들 계좌 시작-->
+          <section class="son_account main swiper-slide">
+            <header>
+              <img src="./img/avatar_son.svg" alt="son">
+              <h2>의민의 용돈</h2>
+              <div class="h_icon">
+                <a href="javascript:void(0)"><img src="./img/scan.svg" alt="scan" /></a>
+                <a href="javascript:void(0)"><img src="./img/search.svg" alt="search" /></a>
+              </div>
+            </header>
+            <section class="account">
+              <div>
+                <div class="account_number">
+                  <p>23-232118-34773</p>
+                  <a class="transfer_btn" onclick="transfer()">이체</a> 
+                </div>
+                <div class="account_balance">
+                  440,000<span>원</span>
+                </div>
+                <div class="account_graph">
+                  <div class="range_slide">
+                    <div class="range_thumb"></div>
+                  </div>
+                  <img src="./img/chart.svg" alt="chart" onclick="moveManagePage()">
+                  <p><span class="rest_date">5일 동안</span> 210,000<span class="money_left">원</span> 남음</p>
+                </div>
+              </div>
+            </section>
+            <section class="spending position">
+              <div class="bar" ></div>
+              <section class="coinbank">
+                <ul>
+                  <ul class=coin_gauge>
+                    <li>
+                      <div class="first"></div>
+                      <p>게임기</p>
+                      <p>142,200원</p>
+                    </li>
+                    <li>
+                      <div class="second son"></div>
+                      <p>기부실천</p>
+                      <p>82,200원</p>
+                    </li>
+                  </ul>
+                  <li class="plus">
+                    <img src="./img/plus.svg" alt="plus">
+                    <p>저금통 만들기</p>
+                  </li>
+                </ul>
+              </section>
+              <section class="spending_list">
+                <div>
+                  <div>
+                    <p>오늘</p>
+                    <p>127,600원 지출</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span>미스터피자</span>
+                      <span>32,000</span> 
+                    </li>
+                    <li>
+                      <span>택시</span>  
+                      <span>4,800</span>
+                    </li>
+                    <li>
+                      <span>이마트</span>
+                      <span>8,600</span>
+                    </li>
+                    <li>
+                      <span>스타벅스 </span> 
+                      <span>4,800</span>
+                    </li>
+                    <li>
+                      <span>전길수</span>
+                      <span>+20,000</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div>
+                    <p>어제</p>
+                    <p>71,600원 지출</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span>CU</span> 
+                      <span>8,900</span> 
+                    </li>
+                    <li>
+                      <span>김경남</span>
+                      <span>+31,000</span>
+                    </li>
+                    <li>
+                      <span>애슐리</span>
+                      <span>31,000</span>
+                    </li>
+                    <li>
+                      <span>교보문고</span>
+                      <span>18,000</span>
+                    </li>
+                    <li>
+                      <span>쿠팡</span>
+                      <span>10,500</span>
+                    </li>
+                    <li>
+                      <span>미스터피자</span>
+                      <span>32,000</span>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
+        <!-- 아들계좌 끝 -->
+        </div>
+     </div>
+    </main>
+    <!-- 메인 슬라이드 끝 -->
+
+      <!-- 지출관리 시작 -->
+      <section class="spending_manage">
+        <div class="top_bar">
+          <time>9:00</time>
+          <div class="top_icon">
+            <img src="./img/signal.svg" alt="signal">
+            <img src="./img/Wifi.svg" alt="wifi">
+            <img src="./img/Battery.svg" alt="battery">
+          </div> 
+        </div>
+        <h1>지출관리</h1>
+        <button class="close" onclick="closePage()">닫기</button>
+        <section>
+          <div class="set_amount">
+              <h2>기준금액설정</h2>
+              <span id="range_val">1000원</span>
+          </div>
+          <div class="garph_bar">
+            <input type="range" id="slide_range" step="1000" value="1000" min="1000" max="20000000">
+          </div>
+          <div class="daily_report">
+            <h2>일간리포트</h2>
+            <div>
+              <canvas id="myChar"></canvas>
+            </div>
+          </div>
+          <div class="spending_pattern">
+            <h2><span class="month"></span>월 지출 패턴</h2>
+            <canvas id="myChart" width="303" height="303">
+            </canvas>
+            <ul class="month_list">
+              <li>
+                <img src="./img/car.svg" alt="car">
+                <p>주유비</p>
+                <span class="month_total"></span>
+              </li>
+              <li>
+                <img src="./img/helth.svg" alt="car">
+                <p>건강관리</p>
+                <span class="month_total"></span>
+              </li>
+              <li>
+                <img src="./img/food.svg" alt="car">
+                <p>외식비</p>
+                <span class="month_total"></span>
+              </li>
+              <li>
+                <img src="./img/market.svg" alt="car">
+                <p>장보기</p>
+                <span class="month_total"></span>
+              </li>
+              <li>
+                <img src="./img/shop.svg" alt="car">
+                <p>상점</p>
+                <span class="month_total"></span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        
+      </section>
+      <!-- 지출관리 끝-->
+
+      <!-- 이체 시작 -->
+      <section class="transfer">
+        <div class="top_bar">
+          <time>9:00</time>
+          <div class="top_icon">
+            <img src="./img/signal.svg" alt="signal">
+            <img src="./img/Wifi.svg" alt="wifi">
+            <img src="./img/Battery.svg" alt="battery">
+          </div> 
+        </div>
+        <h2>이체</h2>
+        <button class="cancel" onclick="cancel()">취소</button>
+        <!-- 계좌리스트  -->
+        <section class="account_list">
+          <a class="self_insert" onclick="inPage()"><button>직접입력</button></a>
+          <ul>
+            <li>
+              <img src="./img/account_img/1.svg" class="avatar" alt="정을수">
+              <div>
+                <p>정을수</p>
+                <p>신한 112048595002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+            <li>
+              <img src="./img/account_img/2.svg" class="avatar" alt="신이현">
+              <div>
+                <p>신이현</p>
+                <p>국민 112048393002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+            <li>
+              <img src="./img/account_img/3.svg" class="avatar" alt="웅진코웨이">
+              <div>
+                <p>웅진코웨이</p>
+                <p>국민 112048393002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+            <li>
+              <img src="./img/account_img/4.svg" class="avatar" alt="기강슈퍼">
+              <div>
+                <p>기강 슈퍼</p>
+                <p>하나 112048393002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+            <li>
+              <img src="./img/account_img/5.svg" class="avatar" alt="김민석">
+              <div>
+                <p>김민석</p>
+                <p>하나 1112048393002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+            <li>
+              <img src="./img/account_img/6.svg" class="avatar" alt="기성훈">
+              <div>
+                <p>기성훈</p>
+                <p>하나 112048393002</p>
+              </div>
+              <img src="./img/star_fill.svg" class="star_icon" alt="즐겨찾기">
+            </li>
+          </ul>
+        </section>
+
+        <!-- 이체금액입력-->
+        <section class="transfer_amount">
+          <div class="receiver">
+            <img src="./img/account_img/1.svg" class="avatar" alt="정을수">
+            <div>
+              <p>정을수</p>
+              <p>신한 112048595002</p>
+            </div>
+          </div>
+          <div class="amount">
+             <div>
+              <input type="text" class="number_input"  maxlength="14"/>
+              <span>원</span> 
+             </div>
+             <p>샐활비 계좌: 1,752,900 에서</p>
+           </div>
+           <ul>
+             <li>1</li>
+             <li>2</li>
+             <li>3</li>
+             <li>4</li>
+             <li>5</li>
+             <li>6</li>
+             <li>7</li>
+             <li>8</li>
+             <li>9</li>
+             <li>0</li>
+             <li>00</li>
+             <li><img src="./img/arrow.svg" alt="화살표"></li>
+           </ul>
+           
+        </section>
+          <div class="next">다음</div>
+
+        <!-- 이체완료페이지 -->
+        <section class="transfer_done">
+          <div>
+            <span>정을수</span>님께<br> <span class="input_value">원</span>이<br> 이체되었습니다.
+          </div>
+          <button class="finish_btn" onclick="finish()">닫기</button>
+        </section>
+      </section>
+      <!-- 이체끝 -->
+
+    <nav>
+      <a href="javascript:void(0)"><img src="./img/mdi_home.svg" class="home" alt="home" /></a>
+      <a href="javascript:void(0)"><img src="./img/Group 28.svg" alt="" /></a>
+      <a href="javascript:void(0)"><img src="./img/message.svg" alt="message" /></a>
+      <a href="javascript:void(0)"><img src="./img/more.svg" alt="more" /></a>
+    </nav>
+
+    <!-- footer nav -->
+  </div>
+</body>
+</html>

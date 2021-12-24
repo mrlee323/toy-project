@@ -1,0 +1,65 @@
+{
+  "accountInfo" : [
+    {
+      ".idx": 1,
+      "name": "sara",
+      "image": "avatar.svg",
+      "tilte": "생활비",
+      "accountNumber":"355-673877-78773",
+      "accountBanlance":1240000,
+      "budget": 20000000,
+      "coinBank": [
+        {"purpose": "여행가자!",
+        "target": 1400000,
+        "amount": 842200
+        },
+        {
+          "purpose": "냉장고사기",
+          "target":1800000,
+          "amout": 1422000
+        }
+      ]
+    },
+    {
+      ".idx": 2,
+      "name": "grandma",
+      "image": "avatar_grandma.svg",
+      "title": "할머니 계좌",
+      "accountNumber":"155-23422-78773",
+      "accountBanlance":13140000,
+      "budget": 30000000,
+      "coinBank": [
+        {"purpose": "딸냉장고",
+        "target": 650000,
+        "amount": 545200
+        },
+        {
+          "purpose": "아들컴퓨터",
+          "target":600000,
+          "amout": 432000
+        }
+      ]
+    },
+    {
+      ".idx": 3,
+      "name": "euimin",
+      "image": "avatar_son.svg",
+      "title": "의민이 용돈",
+      "accountNumber":"23-232117-34773",
+      "accountBanlance":440000,
+      "budget": 700000,
+      "coinBank": [
+        {"purpose": "게임기^^",
+        "target": 150000,
+        "amount": 142200
+        },
+        {
+          "purpose": "기부실천!",
+          "target":110000,
+          "amout": 82200
+        }
+      ]
+    }
+  ]
+
+}

@@ -1,0 +1,266 @@
+/* header */
+header{
+  display: flex;
+  padding: 0 21px 0 27px;
+  justify-content: space-between;
+  align-items: center;
+}
+header h2{
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+header .h_icon{
+  display: flex;
+}
+header .h_icon > a > img{
+  margin-left: 18px;
+  height: 24px;
+}
+header .h_icon > a:first-child > img{
+  margin-left: 0px;
+}
+
+/* account 계좌잔액박스 */
+.account > div{
+  width: 279px;
+  height: 155px;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 31px auto 24px;
+  text-align: center;
+  padding-top: 14px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px rgb(226 191 66 / 19%);
+}
+.account > div > .account_number{
+  display: flex;
+  justify-content: center;
+  position:relative;
+}
+.account > div > .account_number p{
+  color: #858585;
+  font-size: 14px;
+}
+.account > div > .account_number a{
+  position: absolute;
+  right: 17px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.account > div > .account_balance{
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 16px 0 15px 0;
+}
+.account > div > .account_balance span{
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+
+}
+.account > div > .account_graph{
+  position: relative;
+}
+/* 남은 금액 range*/
+.account > div > .account_graph .range_slide{
+  width: 202px;
+  height: 6px;
+  background: #C4C4C4;
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  border-radius: 5px;
+  background-image: linear-gradient(#FFDB4C, #FFDB4C);
+  background-size: 0%;
+  background-repeat: no-repeat;
+}
+.account > div > .account_graph .range_slide .range_thumb{
+  height: 17px;
+  width: 5px;
+  position: absolute;
+  top: -7px;
+  background: #FF5F00;
+  transition: background .3s ease-in-out;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.account > div > .account_graph img{ 
+  position: absolute;
+  right: 14px;
+  top: 0;
+  cursor: pointer;
+}
+.account > div > .account_graph p{
+  margin-top: 8px;
+  font-size: 14px;
+  color: #858585;
+}
+.account .ad{
+  margin: 24px auto 21px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+  display: block;
+}
+.account .ad > span{
+  text-decoration: underline;
+}
+
+/* spending 지출 리스트 */
+.spending{
+  display: grid;
+  grid-template-rows: 25px 47px 16px 1fr;
+  background-color: #F5F5F5;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0px -5px 14px rgba(189, 144, 28, 0.08);
+  padding: 0 37px 0;
+  overflow-y: scroll;
+  position: absolute;
+  top: 297px;
+  height: 496px;
+}
+.spending.position{
+  top: 272px;
+}
+.spending .bar{
+  width: 301px;
+  height: 25px;
+  background-color: #F5F5F5;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+.spending .bar::after{
+  content: '';
+  width: 48px;
+  height: 3px;
+  background-color: #C4C4C4;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+/* 저금통만들기 */
+.spending .coinbank{
+  grid-row: 2 / 4;
+  width: 301px;
+  position: sticky;
+  background-color: #F5F5F5;
+  display: flex;
+  top: 25px;
+}
+.spending .coinbank > ul{
+  display: flex;
+  height: 47px;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+.spending .coinbank > ul > .plus{
+  display: flex;
+  background-color: transparent; 
+  align-items: center;
+  flex: 0 0 auto;
+}
+.spending .coinbank .plus img{
+  width: 24px;
+  margin: 0 5px 0 19px;
+}
+.spending .coinbank .plus p{
+  color: #FF5F00;
+  font-weight: 500;
+  font-size: 12px;
+}
+.spending .coinbank .coin_gauge{
+  display: flex;
+}
+.spending .coinbank .coin_gauge >li{
+  width: 162px;
+  height: 47px;
+  background-color: #DADADA;
+  margin-right: 12px;
+  border-radius: 6px;
+  flex: 0 0 auto;
+  position: relative;
+}
+.spending .coinbank .coin_gauge .first{
+  height: 47px;
+  width: 97px;
+  background-color: #FF5F00;
+  border-radius: 6px 0 0 6px;
+  position: absolute;
+}
+.spending .coinbank .coin_gauge .second{
+  background-color: #FEB700;
+  width: 121px;
+  height: 47px;
+  border-radius: 6px 0 0 6px;
+  position: absolute;
+}
+.spending .coinbank .coin_gauge .first.grandma{
+  background-color: #0A73C3;
+}
+.spending .coinbank .coin_gauge .second.grandma{
+  background-color: #005F59
+}
+.spending .coinbank .coin_gauge .first.son{
+  background-color: #0A73C3;
+}
+.spending .coinbank .coin_gauge .second.son{
+  background-color: #EEBA00;
+}
+.spending .coinbank .coin_gauge > li > p{
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.6;
+}
+.spending .coinbank .coin_gauge > li > p:last-child{
+  top: 22px
+}
+/* 지출 상세 리스트 */
+.spending .spending_list{
+  grid-row: 4 / 5;
+}
+.spending .spending_list > div{
+  margin-bottom: 38px;
+}
+.spending .spending_list> div  >div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.spending .spending_list > div > div > .bank__date{
+  font-weight: 700;
+}
+.spending .spending_list > div > div > .bank__pay{
+  color:#B4B4B4;
+}
+.spending .spending_list > div > ul > li{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #DCDCDC;
+  color: #444;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.spending .spending_list > div > ul > li > .goodsName{
+  letter-spacing: 0.3px;
+}
+.spending .spending_list > div > ul > li > .goodsPrice.in{
+  color:#FF5F00;
+}
+.spend_manage{
+  cursor: pointer;
+}
